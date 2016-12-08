@@ -27,12 +27,21 @@ sigma = zeros(1, size(X, 2));
 %       
 
 
+avg_size = mean(X(:, 1));
+sd_size = std(X(:, 1));
+avg_bedrooms = mean(X(:, 2));
+sd_bedrooms = std(X(:, 2));
 
+for iter = 1:length(X)
+  
+  X(iter, 1) = (X(iter, 1) - avg_size)/sd_size;
+  X(iter, 2) = (X(iter, 2) - avg_bedrooms)/sd_bedrooms;
 
+end
 
-
-
-
+for check = 1:10
+  disp(X);
+end
 
 % ============================================================
 
