@@ -8,6 +8,9 @@ m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
+  
+  accums = zeros(size(X, 2), 1);
+  temp_theta = zeros(length(theta), 1);
 
     % ====================== YOUR CODE HERE ======================
     % Instructions: Perform a single gradient step on the parameter vector
@@ -17,11 +20,14 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+for row = 1:m
+  for gen = 1:size(X, 2)
+  
+    accums(gen) = accums(gen) + (theta(gen)*X(row, gen)) - y(row);
+  end
+end
 
-
-
-
-
+disp(accums);
 
 
 
