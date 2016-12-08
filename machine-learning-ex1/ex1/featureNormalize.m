@@ -38,11 +38,6 @@ for iter = 1:length(X)
   X(iter, 2) = (X(iter, 2) - avg_bedrooms)/sd_bedrooms;
 
 end
-
-for check = 1:10
-  disp(X);
-end
-
 % ============================================================
 
 end
